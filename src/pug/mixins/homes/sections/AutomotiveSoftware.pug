@@ -1,0 +1,32 @@
+mixin AutomotiveSoftware 
+  +Section(false, "container").text-center.pb-0#award
+    mixin AwardCard(img, name, title, link)
+      .hoverbox
+        img(src=`${CWD}assets/img/automotive/${img}.png` alt='' data-zanim-xs!={
+          animation: "zoom-in",
+          delay: 0.1
+        }).rounded.img-fluid
+      .overflow-hidden
+        a(href=`${link}`)
+          h5.fs-0.fw-bold.mt-3.mb-1(data-zanim-xs!={from: {y: 45}, delay: 0.2})!=name
+      .overflow-hidden
+        h6.text-700.fw-normal.text-uppercase.ls(data-zanim-xs!={from: {y: 22}, delay: 0.3})=title  
+    .row.justify-content-center
+      .col-lg-9.overflow-hidden
+        p.fs-2.font-sans-serif.fw-normal.text-dark 
+          | Great automotive imaging software is critical
+          | for fast workflows to prep cars for sales. theta360.guide provides
+          span.text-decoration-underline.fw-bolder.ms-1 unbiased tests of software with THETA X 11K images 
+          | We are an independent community site sponsored by RICOH and receive no money 
+          | from  software vendors
+    .row.flex-center
+      .w-100
+      .col-lg-6.pt-5.pt-xl-7(data-zanim-timeline!={delay: 0.0} data-zanim-trigger='scroll')
+        +AwardCard("glo3d", "Glo3D", "Affordable 360 car photography app", `${CWD}pages/glo3d.html`)  
+      .col-lg-6.pt-5.pt-xl-7(data-zanim-timeline!={delay: 0.0} data-zanim-trigger='scroll')
+        +AwardCard("instavid360", "InstaVid360", "Make your vehicles stand out from the rest", `${CWD}pages/instavid360.html`)    
+     
+
+
+    .row.justify-content-center.mt-6
+      .col-lg-9.overflow-hidden

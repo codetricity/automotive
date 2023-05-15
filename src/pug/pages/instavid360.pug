@@ -1,0 +1,25 @@
+extends ../layouts/LayoutTheme
+include ../mixins/pages/AwardDetailJson.pug
+
+block beforeMainContent
+  +FancyNav({navClass: 'fancynavbar-left'})(data-onscroll-fade-in = 'true')
+
+append mainContent  
+  -
+    const data = {
+      "company": "InstaVid360", 
+      "tagline": "Make your vehicles stand out from the rest",
+      "details": "InstaVid360 is a complete content creation, syndication \
+      and vehicle merchandising tool, made available to global partners \
+      as a white-label solution. \n\
+      We combine our best in market spin quality with excellent image stabilization,\
+      video content, photo capture technology, inventory VDPs, and direct messaging \
+      as a complete solution for dealers and lot service companies in one easy \
+      to use iOS and Android app. \n\
+      The white-labelled app is supported by scalable back end infrastructure \
+      that delivers InstaVid360 enhanced 360° Spin, video and photo content to \
+      dealer websites, VDP portals and directly to end consumers.",
+      "referenceLink": "https://www.instavid360.com/",
+      "image": "instavid360.png"
+    }
+  +AwardDetailJson(data)

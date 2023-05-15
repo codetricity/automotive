@@ -1,0 +1,21 @@
+extends ../layouts/LayoutTheme
+include ../mixins/pages/AwardDetailJson.pug
+
+block beforeMainContent
+  +FancyNav({navClass: 'fancynavbar-left'})(data-onscroll-fade-in = 'true')
+
+append mainContent
+  -
+    const data = {
+      "company": "Glo3d",
+      "tagline": "360 CAR PHOTOGRAPHY SOFTWARE",
+      "details":   "Glo3D provides an affordable 360 car photography app that helps \
+      automotive dealers with all their media and content creation and distribution. \
+      Using just a smartphone, create interactive virtual tours and professional \
+      video tours of your vehicle in under 5 minutes! We also offer custom \
+      backgrounds, personalized banners and automatically sync to your website, \
+      social media, & inventory management.",
+      "referenceLink": "https://glo3d.com/",
+      "image": "glo3d.png"
+    }
+  +AwardDetailJson(data)

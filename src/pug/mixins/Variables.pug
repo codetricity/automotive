@@ -1,0 +1,54 @@
+append variables
+  - var title = 'THETA Automotive';
+  - var theme = `${name}-${version}`;
+  - var bootstrapVersion = '5.2';
+  - var attrsMain = { id: 'top', class: 'main' };
+  - var attrsLayout = { class: 'container', 'data-layout': 'container' }
+  - var colors = ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'light', 'dark','white','black'];
+  - var grays = [ 1100, 1000, 900, 800, 700, 600, 500, 400, 300, 200, 100];
+  - var colorsAll = colors.concat(grays);
+
+  - var footer = true;
+  - var pathName = (locals.filename || locals.history[0]).split('\\').join('/').split('src/pug/').pop().split('.pug').shift();
+  - var pageTree = pathName.split('/');
+  - var CWD = pageTree.slice(1).map(() => '../').join('');
+  
+  -
+    var sitemap = 
+      {
+        home: [
+          {
+            title: 'automotive',
+            isActive: true,
+          },
+      ],
+
+      pages: [
+        {
+          title: 'community-management',
+          isActive: true,
+        },
+
+        {
+          title: 'developer-content',
+          isActive: true,
+        },
+
+      ],
+
+      components: {
+        bootstrap: [
+
+        ],
+        sparrow: [
+         
+        ],
+      },
+
+      documentation: [
+        
+      ]
+
+    };
+    
+

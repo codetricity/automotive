@@ -1,0 +1,30 @@
+mixin Discount
+  .col-sm-8.col-md-6.col-lg-10.col-xl-8(data-zanim-xs!={
+    delay: 0.5,
+    animation: 'slide-right'
+  } data-zanim-trigger='scroll')
+    h3.display-4.fs-2
+      | Camera discount for US
+      br
+      | developers &amp; companies.
+    h6.text-danger.mt-3 Buy direct from RICOH Imaging America with discount code
+
+
+    form.mt-5(action="https://formspree.io/f/mqkonybv" method="POST") 
+      .row.gy-4.align-items-center.mb-4
+        .col-12
+          input.form-control.bg-light(type='text', name='name' placeholder='Your Name')
+        .col-12
+          input.form-control.bg-light(type='text', name='company' placeholder='Company')          
+        .col-12
+          input.form-control.bg-light(type='email' name='email' placeholder='Email Address')
+
+      .row.mb-4.align-items-center   
+        .col-auto.d-grid
+          input.btn.btn-dark(type='submit', value='request discount')
+
+        .col-sm
+          p.fs--1.text-700.mb-0.font-sans-serif.mt-2.mt-lg-0
+            | By submitting this form, you agree to the 
+            a(href='https://community.theta360.guide/tos').text-black terms and conditions.
+

@@ -1,0 +1,32 @@
+mixin AwardDetailJson(data)
+  +Section('container-fluid').py-0#award-detail
+    .row
+      .col-xl-7.px-0
+        .sticky-top.overflow-hidden.min-vh-50.min-vh-xl-100
+          +Background({
+            image: `${CWD}assets/img/automotive/${data.image}`,
+            attrs: {'data-zanim-trigger': 'scroll', 'data-zanim-lg': {animation: 'zoom-out-slide-right', delay: 0.4}}
+          })
+
+      .col-xl-5.bg-white.py-6
+        .row.h-100.flex-center
+          .col-lg-8
+            +AwardContentJson(data)
+
+mixin AwardContentJson(data)
+  .row.justify-content-center(data-zanim-timeline!={} data-zanim-trigger='scroll')
+    .col-md-10.col-lg-12
+      .overflow-hidden
+        h4(data-zanim-xs!={delay: 0.1}) #{data.company}
+      .overflow-hidden
+        h6.text-700.fw-normal.text-uppercase.ls.mb-4(data-zanim-xs!={delay: 0.2}) #{data.tagline}
+    .col-md-7.col-lg-12
+      .overflow-hidden
+        p.mb-0.pe-sm-5.pe-lg-0(data-zanim-xs!={delay: 0.3}) #{data.details}
+
+    .col-md-3.col-lg-12.mt-6.mt-md-0.mt-lg-6
+      .overflow-hidden
+        h6.text-uppercase.ls(data-zanim-xs!={delay: 0.4}) reference
+      .overflow-hidden
+        div(data-zanim-xs!={delay: 0.5})
+          a(href=`${data.referenceLink}`).text-700 company website

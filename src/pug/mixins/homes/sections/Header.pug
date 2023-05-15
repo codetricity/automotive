@@ -1,0 +1,21 @@
+mixin Header
+  +Section({
+    image: `${CWD}assets/img/automotive/interior_no_360.webp`,
+    className: "overlay overlay-1",
+    attrs: {"data-zanim-xs": {delay: 0.4, animation: "zoom-out"}, "data-zanim-trigger": "scroll"}
+  }, "container overflow-hidden").py-0#cafeHeader
+    div(data-zanim-timeline!={delay: 0.6} data-zanim-trigger="scroll")
+      .row.min-vh-100.flex-center.py-8.text-center
+        .col-lg-8
+          .overflow-hidden
+            h1.text-white.fs-3.fs-sm-4.fs-lg-5.px-2.px-lg-0.text-smallcaps.display-4(data-parallax data-rellax-speed=5)
+              span.overflow-hidden.d-block
+                span.d-inline-block(data-zanim-xs!={delay: 0.1}) RICOH THETA X
+              span.overflow-hidden.d-block
+                span.d-inline-block(data-zanim-xs!={delay: 0.2}) automobile imaging 
+              span.overflow-hidden.d-block
+                span.d-inline-block(data-zanim-xs!={delay: 0.3}) leader!
+          .overflow-hidden(data-parallax data-rellax-speed=3)
+            h5.fs-0.fs-sm-1.mt-3.mt-md-5.text-white(data-zanim-xs!={delay: 0.4}) 360° camera for maximum automotive sales
+    +DownArrow(2)
+  #target-down
