@@ -1,3 +1,16 @@
-# Community Thanks Award Site for RICOH THETA Camera
+# RICOH THETA Camera for Automotive Interiors
 
-[https://theta360developers.github.io/thanks/](https://theta360developers.github.io/thanks/)
+[https://automotive.theta360.guide](https://automotive.theta360.guide)
+
+## development workflow
+
+`npm start`
+
+## publish workflow
+
+```text
+npm run live
+npm run gh-branch
+git checkout gh-pages
+git push origin gh-pages
+```
