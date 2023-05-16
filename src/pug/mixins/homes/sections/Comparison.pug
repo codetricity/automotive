@@ -1,0 +1,36 @@
+
+mixin Comparison
+  +Section#comparison
+    mixin Service(img, title, description, link)
+      .d-flex( id=title.replace(/ /g,'') data-zanim-trigger='scroll' data-zanim-timeline!={})
+        .overflow-hidden
+          img(src=`${CWD}assets/img/icons/${img}` width='50' alt='' data-zanim-xs!={
+            delay: 0.2,
+            animation: "slide-right"
+          }).me-3.me-sm-4
+        .flex-1
+          .overflow-hidden
+            h4.mb-2(data-zanim-xs!={delay: 0.1, animation: "slide-right"})!=title
+          .overflow-hidden
+            p(data-zanim-xs!={delay: 0.2, animation: "slide-right"})!=description
+          .overflow-hidden
+            a(data-zanim-xs!={delay: 0.2, animation: "slide-right"} href=link) video            
+
+    .row.justify-content-center.gy-4.gx-lg-4
+      .col-12.mb-3.mb-md-5.text-center
+        h2.fs-3.fs-sm-4
+          span.text-decoration-underline compare SC2 vs X models.
+
+      .col-lg-5
+        +Service('shape.svg', "image detail", 
+        "THETA X takes 11K images compared to 5.4K SC2 images, resulting in high-impact car interior shots, \
+        quicker buying decisions, and higher sales prices.", 
+        "https://youtu.be/Aj-3x45yGaE")
+      .col-lg-5
+        +Service('icon-target.svg', "HDR", "HDR helps captures light and dark areas of the automobile interior. THETA X has superior \
+        HDR processing, resulting in better visibility.", 
+        "https://youtu.be/3RVCiWjm2zw")
+      .col-lg-5
+        +Service('favorites-button.svg', "image transfer speed", "THETA X 5GHz WiFi can transfer 11K images more than twice as fast as \
+        the SC2 can transfer 5.4K images.", "https://youtu.be/uAqDgjrjQTk")
+    

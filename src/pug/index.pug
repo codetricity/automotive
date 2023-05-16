@@ -1,5 +1,6 @@
 extends layouts/LayoutTheme
 include mixins/homes/Automotive
+include mixins/homes/sections/Comparison 
 
 append variables
   - var attrsHtml = Object.assign({ lang: `${ dir === 'rtl' ? 'ar' : 'en-US'}`, dir: dir || 'ltr', class: 'has-sidemenu has-sidemenu-left' });
@@ -7,7 +8,7 @@ append variables
   
 prepend scripts
   script(src=`${CWD}vendors/rellax/rellax.min.js`) 
-  script(src!=`https://maps.googleapis.com/maps/api/js?key=${APIGmap}&callback=initMap` async)
+  //- script(src!=`https://maps.googleapis.com/maps/api/js?key=${APIGmap}&callback=initMap` async)
 
 
 block beforeMainContent
@@ -16,3 +17,4 @@ block beforeMainContent
 append mainContent 
   +Header
   +AutomotiveSoftware
+  +Comparison
