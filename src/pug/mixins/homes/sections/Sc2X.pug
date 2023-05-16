@@ -1,0 +1,33 @@
+
+mixin Comparison
+  +Section#comparison
+    mixin Service(img, title, description)
+      .d-flex( id=title.replace(/ /g,'') data-zanim-trigger='scroll' data-zanim-timeline!={})
+        .overflow-hidden
+          img(src=`${CWD}assets/img/icons/${img}` width='50' alt='' data-zanim-xs!={
+            delay: 0.2,
+            animation: "slide-right"
+          }).me-3.me-sm-4
+        .flex-1
+          .overflow-hidden
+            h4.mb-2(data-zanim-xs!={delay: 0.1, animation: "slide-right"})!=title
+          .overflow-hidden
+            p(data-zanim-xs!={delay: 0.2, animation: "slide-right"})!=description
+
+    .row.justify-content-center.gy-4.gx-lg-4
+      .col-12.mb-3.mb-md-5.text-center
+        h2.fs-3.fs-sm-4
+          span.text-decoration-underline powerful inside.
+
+      .col-lg-5
+        +Service('bootstrap.svg', "bootstrap 5", "Build responsive, mobile-first projects on the web with the world's most popular front-end component library.")
+      .col-lg-5
+        +Service('icon-target.svg', "responsive CSS helper classes", "Toggle styles on any element, across any breakpoint according to Bootstrap grid system, using Sparrow's CSS helper classes.")
+      .col-lg-5
+        +Service('favorites-button.svg', "32 sets of elements", "Elegantly redesigned popular plugins including touch sliders, typed text, parallax, video background and more.")
+      .col-lg-5
+        +Service('icon-line-chart.svg', "buttery smooth animation", "Crazy fast, responsive, efficient and freakishly robust GSAP; giving you the new standard for HTML5 and javascript animation.")
+      .col-lg-5
+        +Service('multi-purpose.svg', "modular &amp; multipurpose", "Create rich UI and style with sparrow's array of ready-made modular sections - carefully designed for wide range of purposes.")
+      .col-lg-5
+        +Service('icon-coding.svg', "familiar markup", "Based on the Bootstrap 4 code base, sparrow's code is instantly familiar, easy to understand and a straightforward to extend.")
