@@ -9,8 +9,8 @@
 ## publish workflow
 
 ```text
-npm run live
 git branch -D gh-pages
+npm run live
 git add .
 git commit -m "message"
 npm run gh-branch
