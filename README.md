@@ -10,6 +10,7 @@
 
 ```text
 npm run live
+git branch -D gh-pages
 npm run gh-branch
 git checkout gh-pages
 git push origin gh-pages
