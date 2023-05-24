@@ -10,6 +10,7 @@
 
 ```text
 git checkout main
+git pull
 git branch -D gh-pages
 npm run live
 git add .
