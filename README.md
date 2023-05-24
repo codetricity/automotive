@@ -11,9 +11,9 @@
 ```text
 npm run live
 git branch -D gh-pages
-npm run gh-branch
 git add .
 git commit -m "message"
+npm run gh-branch
 git checkout gh-pages
 git pull origin gh-pages
 git push origin gh-pages
