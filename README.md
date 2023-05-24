@@ -9,6 +9,7 @@
 ## publish workflow
 
 ```text
+git checkout main
 git branch -D gh-pages
 npm run live
 git add .
