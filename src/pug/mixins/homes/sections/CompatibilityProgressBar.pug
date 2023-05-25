@@ -1,0 +1,30 @@
+mixin CompatibilityProgressBar()
+  +Section.text-center#defaultProgressbar
+    .row.justify-content-center
+      .col-md-6
+        //- h2.fs-3.fs-sm-4.text-decoration-underline.mb-3 THETA X
+        p.text-500.fst-italic THETA X compatiblity - for the best interior car images
+
+    .row.align-items-center.mt-6
+      .col-md-5.position-relative
+        .progress-circle.mb-4(data-progress-circle!={ 
+          progress: 75,
+          subText: "<span class='text-700 pt-2'>X Ready</span>"
+        })    
+
+        h4 THETA X Compatibility
+        p.px-4 Good customer buying experience and good workflow. 
+
+      .col-md-7.ps-md-7.text-start.mt-8.mt-md-0
+
+        .progress-line.me-4(data-progress-line!={progress: 100, subText: "Connection"})
+
+        .progress-line.me-4.mt-4(data-progress-line!={progress: 50, subText: "Take Picture"})
+
+        .progress-line.me-4.mt-4(data-progress-line!={progress: 50, subText: "View"})
+        
+        .progress-line.me-4.mt-4(data-progress-line!={progress: 100, subText: "Preview"})
+
+
+        p.mt-4 takes 5.5K image, but not 11K.  
+          |  images viewed at lower resolution
