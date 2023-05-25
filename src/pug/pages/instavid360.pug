@@ -1,5 +1,11 @@
 extends ../layouts/LayoutTheme
 include ../mixins/pages/AwardDetailJson.pug
+include ../mixins/homes/sections/CompatibilityProgressBar.pug
+
+prepend scripts
+  script(src=`${CWD}vendors/rellax/rellax.min.js`) 
+  script(src=`${CWD}vendors/swiper/swiper-bundle.min.js`)
+  script(src=`${CWD}vendors/progressbar/progressbar.min.js`)  
 
 block beforeMainContent
   +FancyNav({navClass: 'fancynavbar-left'})(data-onscroll-fade-in = 'true')
