@@ -1,4 +1,4 @@
-mixin CompatibilityProgressBar()
+mixin CompatibilityProgressBar(data)
   +Section.text-center#defaultProgressbar
     .row.justify-content-center
       .col-md-6
@@ -17,7 +17,7 @@ mixin CompatibilityProgressBar()
 
       .col-md-7.ps-md-7.text-start.mt-8.mt-md-0
 
-        .progress-line.me-4(data-progress-line!={progress: 100, subText: "Connect"})
+        .progress-line.me-4(data-progress-line!={progress: `${data.connect}`, subText: "Connect"})
 
         .progress-line.me-4.mt-4(data-progress-line!={progress: 100, subText: "Take Picture"})
 
