@@ -1,4 +1,7 @@
 mixin CompatibilityProgressBar(data)
+  -
+    const percentCompat = Math.round(((data.connect + data.takePicture + data.view + data.preview)/400) * 100);
+    console.log(percentCompat);
   +Section.text-center#defaultProgressbar
     .row.justify-content-center
       .col-md-6
@@ -8,7 +11,7 @@ mixin CompatibilityProgressBar(data)
     .row.align-items-center.mt-6
       .col-md-5.position-relative
         .progress-circle.mb-4(data-progress-circle!={ 
-          progress: 88,
+          progress: `${percentCompat}`,
           subText: "<span class='text-700 pt-2'>X Ready</span>"
         })    
 
@@ -19,11 +22,11 @@ mixin CompatibilityProgressBar(data)
 
         .progress-line.me-4(data-progress-line!={progress: `${data.connect}`, subText: "Connect"})
 
-        .progress-line.me-4.mt-4(data-progress-line!={progress: 100, subText: "Take Picture"})
+        .progress-line.me-4.mt-4(data-progress-line!={progress: `${data.takePicture}`, subText: "Take Picture"})
 
-        .progress-line.me-4.mt-4(data-progress-line!={progress: 50, subText: "View"})
+        .progress-line.me-4.mt-4(data-progress-line!={progress: `${data.view}`, subText: "View"})
         
-        .progress-line.me-4.mt-4(data-progress-line!={progress: 100, subText: "Preview"})
+        .progress-line.me-4.mt-4(data-progress-line!={progress: `${data.preview}`, subText: "Preview"})
 
 
         p.mt-4.small <span class='fw-bolder'>details: </span> takes 5.5K and 11K pictures.  
