@@ -16,7 +16,7 @@ mixin CompatibilityProgressBar(data)
         })    
 
         h4 our opinion
-        p.px-4 Good customer buying experience and good workflow. 
+        p.px-4 #{data.opinion} 
 
       .col-md-7.ps-md-7.text-start.mt-8.mt-md-0
 
@@ -29,5 +29,4 @@ mixin CompatibilityProgressBar(data)
         .progress-line.me-4.mt-4(data-progress-line!={progress: `${data.preview}`, subText: "Preview"})
 
 
-        p.mt-4.small <span class='fw-bolder'>details: </span> takes 5.5K and 11K pictures.  
-          |  images viewed at lower resolution
+        p.mt-4.small <span class='fw-bolder'>details: </span> #{data.details}
