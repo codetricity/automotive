@@ -14,7 +14,7 @@ mixin Comparison
           .overflow-hidden
             p(data-zanim-xs!={delay: 0.2, animation: "slide-right"})!=description
           .overflow-hidden
-            a(data-zanim-xs!={delay: 0.2, animation: "slide-right"} href=link) video            
+            a(data-zanim-xs!={delay: 0.2, animation: "slide-right"} href=link) info            
 
     .row.justify-content-center.gy-4.gx-lg-4
       .col-12.mb-3.mb-md-5.text-center
@@ -37,4 +37,6 @@ mixin Comparison
         +Service('icon-line-chart.svg', "easy camera connection", "The more powerful THETA X WiFi signal enables easier camera to mobile \
         phone connections.", 
         "https://youtu.be/uAqDgjrjQTk")
-        
+      .col-lg-5
+        +Service('cpu.png', "firmware updates", "THETA X can update firmware from the camera. SC2 requires RICOH desktop software.", 
+        "https://www.youtube.com/theta360developers")        
