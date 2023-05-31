@@ -14,7 +14,11 @@ mixin AwardDetailJson(data, compatData)
         .row.h-100.flex-center
           .col-lg-8
             +AwardContentJson(data)
-          +CompatibilityProgressBar(compatData)
+          //- +CompatibilityProgressBar(compatData)
+          if compatData.showChart
+            +CompatibilityProgressBar(compatData)
+          else
+            p testing chart coming soon
 
 mixin AwardContentJson(data)
   .row.justify-content-center(data-zanim-timeline!={} data-zanim-trigger='scroll')

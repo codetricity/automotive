@@ -1,6 +1,6 @@
 mixin CompatibilityProgressBar(data)
   -
-    const percentCompat = Math.round(((data.connect + data.takePicture + data.view + data.preview)/400) * 100);
+    const percentCompat = Math.round(((data.connect + data.takePicture + data.view)/300) * 100);
     console.log(percentCompat);
   +Section.text-center#defaultProgressbar
     .row.justify-content-center
@@ -26,7 +26,5 @@ mixin CompatibilityProgressBar(data)
 
         .progress-line.me-4.mt-4(data-progress-line!={progress: `${data.view}`, subText: "View"})
         
-        .progress-line.me-4.mt-4(data-progress-line!={progress: `${data.preview}`, subText: "Preview"})
-
 
         p.mt-4.small <span class='fw-bolder'>details: </span> #{data.details}
