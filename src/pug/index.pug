@@ -1,6 +1,8 @@
 extends layouts/LayoutTheme
 include mixins/homes/Automotive
 include mixins/homes/sections/Comparison 
+include mixins/homes/sections/VideoHeader 
+
 
 append variables
   - var attrsHtml = Object.assign({ lang: `${ dir === 'rtl' ? 'ar' : 'en-US'}`, dir: dir || 'ltr', class: 'has-sidemenu has-sidemenu-left' });
@@ -13,6 +15,7 @@ block beforeMainContent
   +FancyNav({navClass: 'fancynavbar-left'})(data-onscroll-fade-in = 'true')
 
 append mainContent 
-  +Header
+  //- +Header
+  +VideoHeader
   +AutomotiveSoftware
   +Comparison
