@@ -1,6 +1,11 @@
 extends ../layouts/LayoutTheme
 include ../mixins/pages/AwardDetailJson.pug
 
+prepend scripts
+  script(src=`${CWD}vendors/rellax/rellax.min.js`) 
+  script(src=`${CWD}vendors/swiper/swiper-bundle.min.js`)
+  script(src=`${CWD}vendors/progressbar/progressbar.min.js`)  
+
 block beforeMainContent
   +FancyNav({navClass: 'fancynavbar-left'})(data-onscroll-fade-in = 'true')
 
@@ -29,4 +34,12 @@ append mainContent
       "image": "ez360_profile_2.jpg",
       "referenceLinkLabel": "EZ360"      
     }
-  +AwardDetailJson(data)
+    const compatData = {
+      "showChart": false,
+      "connect": 100,
+      "takePicture": 50,
+      "view": 50,
+      "opinion": "Good car sales app, focus is on key sales features. Noticeably good connection to camera.",
+      "details": "Can take 11K pictures if camera is manually set to 11K. No immediate post view in mobile app."              
+    }
+  +AwardDetailJson(data, compatData)

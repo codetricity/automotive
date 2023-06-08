@@ -1,6 +1,11 @@
 extends ../layouts/LayoutTheme
 include ../mixins/pages/AwardDetailJson.pug
 
+prepend scripts
+  script(src=`${CWD}vendors/rellax/rellax.min.js`) 
+  script(src=`${CWD}vendors/swiper/swiper-bundle.min.js`)
+  script(src=`${CWD}vendors/progressbar/progressbar.min.js`)  
+
 block beforeMainContent
   +FancyNav({navClass: 'fancynavbar-left'})(data-onscroll-fade-in = 'true')
 
@@ -22,6 +27,14 @@ append mainContent
       of location",
       "referenceLink": "https://dealermade-next.com",
       "image": "dealermade-app.png",
-      "referenceLinkLabel": "Dealermade"      
+      "referenceLinkLabel": "Dealermade"
     }
-  +AwardDetailJson(data)
+    const compatData = {
+      "showChart": false,
+      "connect": 100,
+      "takePicture": 50,
+      "view": 100,
+      "opinion": "Intergrated hardware and software solution is impressive. Texas know-how and sales acumen at its best.",
+      "details": "Displays 11K images clearly on integrated tablet screen."                 
+    }
+  +AwardDetailJson(data, compatData)

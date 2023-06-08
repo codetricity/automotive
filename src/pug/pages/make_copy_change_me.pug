@@ -1,5 +1,12 @@
 extends ../layouts/LayoutTheme
 include ../mixins/pages/AwardDetailJson.pug
+include ../mixins/homes/sections/CompatibilityProgressBar.pug
+
+prepend scripts
+  script(src=`${CWD}vendors/rellax/rellax.min.js`) 
+  script(src=`${CWD}vendors/swiper/swiper-bundle.min.js`)
+  script(src=`${CWD}vendors/progressbar/progressbar.min.js`)  
+
 
 block beforeMainContent
   +FancyNav({navClass: 'fancynavbar-left'})(data-onscroll-fade-in = 'true')
@@ -16,9 +23,24 @@ append mainContent
     const data = {
       "company": "Name of company", 
       "tagline": "Marketing tagline",
-      "details": "Description of application",
+      "details": "Description of application. \
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod \
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex \
+      ea commodo consequat. Duis aute irure dolor in reprehenderit in \
+      voluptate velit esse cillum dolore eu fugiat nulla pariatur. \
+      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui \
+      officia deserunt mollit anim id est laborum.",
       "referenceLink": "https://community.theta360.guide",
-      "image": "detail-fake-food.jpg",
-      "referenceLinkLabel": "label for link"
+      "image": "fake-detail.png"
     }
-  +AwardDetailJson(data)
+    const compatData = {
+      "showChart": true,
+      "connect": 100,
+      "takePicture": 50,
+      "view": 50,
+      "opinion": "put oppkey opinion here. Exp: Good customer buying experience and good workflow. ",
+      "details": "put test details here. exp: takes 5.5K and 11K pictures. images viewed \
+      at lower resolution "
+    }
+  +AwardDetailJson(data, compatData)

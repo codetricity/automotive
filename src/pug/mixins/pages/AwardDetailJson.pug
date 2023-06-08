@@ -1,4 +1,6 @@
-mixin AwardDetailJson(data)
+include ../homes/sections/CompatibilityProgressBar
+
+mixin AwardDetailJson(data, compatData)
   +Section('container-fluid').py-0#award-detail
     .row
       .col-xl-7.px-0
@@ -12,6 +14,11 @@ mixin AwardDetailJson(data)
         .row.h-100.flex-center
           .col-lg-8
             +AwardContentJson(data)
+          //- +CompatibilityProgressBar(compatData)
+          if compatData.showChart
+            +CompatibilityProgressBar(compatData)
+          else
+            p testing chart coming soon
 
 mixin AwardContentJson(data)
   .row.justify-content-center(data-zanim-timeline!={} data-zanim-trigger='scroll')

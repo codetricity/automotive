@@ -1,5 +1,11 @@
 extends ../layouts/LayoutTheme
 include ../mixins/pages/AwardDetailJson.pug
+include ../mixins/homes/sections/CompatibilityProgressBar.pug
+
+prepend scripts
+  script(src=`${CWD}vendors/rellax/rellax.min.js`) 
+  script(src=`${CWD}vendors/swiper/swiper-bundle.min.js`)
+  script(src=`${CWD}vendors/progressbar/progressbar.min.js`)  
 
 block beforeMainContent
   +FancyNav({navClass: 'fancynavbar-left'})(data-onscroll-fade-in = 'true')
@@ -23,4 +29,12 @@ append mainContent
       "image": "instavid360.png",
       "referenceLinkLabel": "InstaVid360"      
     }
-  +AwardDetailJson(data)
+    const compatData = {
+      "showChart": false,
+      "connect": 100,
+      "takePicture": 100,
+      "view": 100,
+      "opinion": "Excellent support of RICOH models. Close cooperation on RICOH technology. Good feature set and workflow. ",
+      "details": "Can take and view 11K pictures. Set 11K with app. Viewer shows fine detail of interior with zoom."       
+    }
+  +AwardDetailJson(data, compatData)
