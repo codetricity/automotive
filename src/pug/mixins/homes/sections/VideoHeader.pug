@@ -1,0 +1,17 @@
+mixin VideoHeader
+  +Section({
+    image: `${CWD}assets/img/automotive/interior_no_360.webp`,
+    className: 'overlay overlay-2',
+    youtube: {
+      videoId : 'XpfLya4DSFM',
+      startSeconds : 2,
+      endSeconds : 19  
+    }
+  }).py-0#bicycleHeader(data-zanim-lg!={delay: 0.6, animation: "zoom-out"} data-zanim-trigger='scroll')
+    .row.min-vh-100.align-items-center.py-8
+      .col-lg-7(data-zanim-timeline!={delay: 0.6} data-zanim-trigger='scroll')
+        h1.fs-3.fs-sm-4.fs-xl-5.display-4.text-white.fst-italic.overflow-hidden.text-decoration-underline(data-zanim-xs!={delay: 0.1}) RICOH THETA X
+        .overflow-hidden
+          p.text-white.mb-4.font-sans-serif.fst-italic.fs-2(data-zanim-xs!={delay: 0.2}) automobile imaging leader
+        div(data-zanim-xs!={delay: 0.3})
+          a(href='#software').btn.btn-outline-light.mt-4 Choose Software
