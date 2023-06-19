@@ -17,6 +17,6 @@ git add .
 git commit -m "message"
 npm run gh-branch
 git checkout gh-pages
-git pull origin gh-pages
+git pull --rebase origin gh-pages
 git push origin gh-pages
 ```
