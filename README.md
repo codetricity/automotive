@@ -4,7 +4,15 @@
 
 ## development workflow
 
-`npm start`
+```text
+git checkout -b name-of-branch
+npm start
+```
+
+* change files
+* add changed files with git
+* push up to branch
+* make pull request
 
 ## publish workflow
 
@@ -25,3 +33,10 @@ git push origin gh-pages
 
 Detail pages for each automotive partner.
 `src/pug/pages/`
+
+## package installation
+
+```text
+npm install -g gulp-cli
+npm install
+```
