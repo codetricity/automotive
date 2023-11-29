@@ -20,3 +20,8 @@ git checkout gh-pages
 git pull --rebase origin gh-pages
 git push origin gh-pages
 ```
+
+## file structure
+
+Detail pages for each automotive partner.
+`src/pug/pages/`
